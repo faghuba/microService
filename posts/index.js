@@ -1,13 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
+const cors = require('cors')
 
+//middlewares
 const app = express();
 app.use(bodyParser.json());
+app.use(cors())
 
 
 // posts Route 
-
 const posts = {};
 
 app.get('/posts', (req, res) => {
